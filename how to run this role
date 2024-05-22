@@ -1,0 +1,16 @@
+create a role using below command.
+ansible-galaxy init ansible-role-name(hardening)
+  
+copy all files in this repository to above role.
+  
+creat host file outside the role.
+  
+creat hardenig.yaml outside the rolefile and give below code in it.
+  ---
+- name: Apply system hardening
+  hosts: all
+  become: true
+  roles:
+    - hardening
+  
+now run ansible-playbook -i hosts hardening.yaml
